@@ -1,0 +1,28 @@
+<div class="row clearfix">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+            <div class="d-flex justify-content-between">
+                <h5>Add Members </h5>
+                <!-- <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+                    <mat-icon>close</mat-icon>
+                </button> -->
+            </div>
+            <div class="body">
+                <h6>import members using an excel sheet</h6>
+                <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" />
+
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                        <div class="example-button-row" align="end">
+                            
+                            <button mat-raised-button color="primary" [disabled]="amenityForm.valid"
+                                (click)="addAmenity()">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

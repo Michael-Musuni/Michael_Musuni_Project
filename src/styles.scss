@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+.odd-row {
+  background-color: white;
+}
+
+.even-row {
+  background-color: #eee;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto';
+  font-weight: 400 !important;
+}
+
+body {
+  // text-transform: uppercase !important;
+  margin: 0;
+  font-family: 'Roboto'
+}
+
+.bg {
+  background-color: rgb(206, 222, 238);
+}
+
+
+// .bg {
+//   background: linear-gradient(to left, hsl(115, 25%, 90%), #a8d1b8e8);
+// }
+
+// .bg1 {
+//   background: linear-gradient(to right, hsl(120, 2%, 52%), #a8d1b8e8);
+// }
+
+.down {
+  background: linear-gradient(to left, #5d7cbc, white,#5d7cbc)
+}
+
+.fg {
+  color: #a6a5e4;
+  font-weight: bolder;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.wbg {
+  color: #fafafa;
+  font-weight: bolder;
+}
+
+
+.trow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,48 @@
+
+
+
+
+            <!-- <app-dashboard-widgets></app-dashboard-widgets> -->
+
+            <div class="row clearfix">
+                <div class="card col-lg-6" style="margin-left: auto;margin-right: auto;width: 49%;">
+                    <div class="card-body">
+                      <h5>Total Monthly Income from Members</h5>
+                      <div id="area">
+                        <apx-chart [series]="areaChartOptions.series" [chart]="areaChartOptions.chart" [xaxis]="areaChartOptions.xaxis"
+                          [stroke]="areaChartOptions.stroke" [tooltip]="areaChartOptions.tooltip"
+                          [dataLabels]="areaChartOptions.dataLabels"></apx-chart>
+                      </div>
+                    </div>
+                </div>
+            
+                <div class="card col-lg-6" style="margin-left: auto;margin-right: auto;width: 49%;">
+                        <div class="card-body">
+                          <h5>Total Monthly Water Usage from Members</h5>
+                          <div id="area">
+                            <apx-chart [series]="area2ChartOptions.series" [chart]="areaChartOptions.chart" [xaxis]="areaChartOptions.xaxis"
+                              [stroke]="area2ChartOptions.stroke" [tooltip]="areaChartOptions.tooltip"
+                              [dataLabels]="area2ChartOptions.dataLabels"></apx-chart>
+                          </div>
+                        </div>
+                </div>
+                <div class="card col-lg-6" style="margin-left: auto;margin-right: auto;width: 49%;">
+                    <div class="card-body">
+                      <h5>Percentage of Members Per Route</h5>
+                      <apx-chart [series]="piechartOptions.series" [chart]="piechartOptions.chart" [labels]="piechartOptions.labels"
+                        [responsive]="piechartOptions.responsive"></apx-chart>
+                    </div>
+                  </div>
+                  <div class="card col-lg-6" style="margin-left: auto;margin-right: auto;width: 49%;">
+                    <div class="card-body">
+                      <h5>Percentage of Members Per Route</h5>
+                      <apx-chart [series]="pieOptions.series" [chart]="piechartOptions.chart" [labels]="piechartOptions.labels"
+                        [responsive]="pieOptions.responsive"></apx-chart>
+                    </div>
+                  </div>
+        </div>
+              
+
+
+
+      

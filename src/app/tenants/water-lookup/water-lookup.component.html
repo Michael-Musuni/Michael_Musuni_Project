@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="body">
+          <div class="table-responsive">
+            <div class="materialTableHeader">
+              <div class="row">
+                <div class="col-8">
+                  <ul class="header-buttons-left ms-0">
+  
+                    <li class="dropdown m-l-5">
+                      <label for="search-input"><i class="material-icons search-icon">search</i></label>
+                      <input placeholder="Search" type="text" (keyup)="applyFilter($event)" #filter
+                        class="browser-default search-field" aria-label="Search box" />
+                    </li>
+                   
+                   
+                  </ul>
+                </div>
+                <div class="col-4">
+                  <ul class="header-buttons">
+                 
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <mat-table #table matTableExporter [dataSource]="dataSource" mat-row-hover matSort class="mat-cell"
+              #exporter="matTableExporter">
+              <!-- Checkbox Column -->
+              <ng-container matColumnDef="type">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="table-img column-nowrap">Water Type</mat-header-cell>
+                <mat-cell *matCellDef="let row;let i = index" [class.odd-row]="i % 2" [class.even-row]="!(i % 2)"
+                  class="table-img column-nowrap">{{ row.type }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="costPerUnit">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="table-img column-nowrap">Cost per Unit</mat-header-cell>
+                <mat-cell *matCellDef="let row; let i = index" [class.odd-row]="i % 2" [class.even-row]="!(i % 2)"
+                  class="table-img column-nowrap mat-cell-wrap mat-line-clamp-2">{{ row.costPerUnit }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="standingCharges">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="table-img column-nowrap">
+                  Standing Amount</mat-header-cell>
+                <mat-cell *matCellDef="let row;let i = index" [class.odd-row]="i % 2" [class.even-row]="!(i % 2)"
+                  class="table-img column-nowrap">{{ row.standingCharges }}</mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="reconnectionCharges">
+                <mat-header-cell *matHeaderCellDef mat-sort-header class="table-img column-nowrap">
+                  Reconnection Amount</mat-header-cell>
+                <mat-cell *matCellDef="let row;let i = index" [class.odd-row]="i % 2" [class.even-row]="!(i % 2)"
+                  class="table-img column-nowrap">{{ row.reconnectionCharges }}</mat-cell>
+              </ng-container>
+              
+             
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns" [style.cursor]="'pointer'" matRipple>
+              </mat-row>
+              <mat-cell *matNoDataRow colspan="4">
+                No data matching the filter "{{ input.value }}"</mat-cell>
+            </mat-table>
+  
+            <!-- Loading spinner -->
+            <!-- <div *ngIf="isLoading" class="tbl-spinner">
+              <mat-progress-spinner color="primary" [diameter]="60" mode="indeterminate">
+              </mat-progress-spinner>
+            </div> -->
+            <mat-paginator #paginator [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

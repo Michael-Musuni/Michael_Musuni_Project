@@ -1,0 +1,76 @@
+<div class="row clearfix">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+                <div class="d-flex justify-content-between">
+                    <h5>Add Water Configuration</h5>
+                    <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            <div class="body">
+
+                <form class="validate-form" [formGroup]="amenityForm">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Select Type of Water</mat-label>
+                                <mat-select formControlName="type">
+                                    <mat-option value="bore_hole">Borehole</mat-option>
+                                    <mat-option value="kanjo">Kanjo Water</mat-option>
+                                    <mat-option value="dam">Dam</mat-option>
+                                    <mat-option value="other">others</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Cost per Unit</mat-label>
+                                <input matInput formControlName="costPerUnit" />
+                                
+                                <mat-error *ngIf="amenityForm.get('costPerUnit').hasError('required')">
+                                    Value is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Standing Charges</mat-label>
+                                <input matInput formControlName="standingCharges" />
+                                
+                                <mat-error *ngIf="amenityForm.get('standingCharges').hasError('required')">
+                                    Value is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Reconnection Charges</mat-label>
+                                <input matInput formControlName="reconnectionCharges" />
+                                
+                                <mat-error *ngIf="amenityForm.get('reconnectionCharges').hasError('required')">
+                                    Value is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                            <div class="example-button-row" align="end">
+                                <button mat-raised-button color="primary" (click)="clearForm()">
+                                    Clear
+                                </button>
+                                <button mat-raised-button color="primary" [disabled]="!amenityForm.valid"
+                                    (click)="addAmenity()">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+

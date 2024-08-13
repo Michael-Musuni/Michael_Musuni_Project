@@ -1,0 +1,39 @@
+<section class="content">
+    <div class="content-block">
+      <div class="block-header">
+        <app-breadcrumb [title]="'Water Configuration'" [items]="['config']" [active_item]="'Water Configuration'">
+        </app-breadcrumb>
+      </div>
+     
+      </div> 
+      <mat-tab-group>
+        
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            Water Config
+          </ng-template>
+          <app-addwater></app-addwater>
+        </mat-tab>
+        
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            Meters Config
+          </ng-template>
+          <app-add-meter></app-add-meter>
+        </mat-tab>
+  
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            Meter Reading
+          </ng-template>
+          <app-meter-read></app-meter-read>
+        </mat-tab>
+  
+      
+      </mat-tab-group>
+  
+    
+  </section>

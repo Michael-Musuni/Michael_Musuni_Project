@@ -1,0 +1,43 @@
+<section class="content">
+    <div class="content-block">
+        <div class="block-header">
+            <!-- breadcrumb -->
+            <app-breadcrumb [title]="'Bills Configuration'" [items]="['Bills']" [active_item]="'Bills'">
+            </app-breadcrumb>
+        </div> 
+  <mat-tab-group>
+    <mat-tab >
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Expenses
+      </ng-template>
+      <app-expense></app-expense>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Invoices
+      </ng-template>
+      <app-invoices></app-invoices>
+    </mat-tab>
+
+    <mat-tab >
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Incomes
+      </ng-template>
+      <app-revenue></app-revenue>
+    </mat-tab>
+    <mat-tab >
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Revenue
+      </ng-template>
+      <app-revenues></app-revenues>
+    </mat-tab>
+  </mat-tab-group>
+   
+    </div>
+  </section>
+
+  

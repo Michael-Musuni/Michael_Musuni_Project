@@ -1,0 +1,56 @@
+<!-- <mat-card> -->
+    <div>
+        <div class="modalHeader">
+            <div class="contact-details-name mb-1">Download Meter Reading Record</div>
+            <button mat-icon-button (click)="dialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <!-- <mat-card-content> -->
+        <form [formGroup]="expensesForm">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-0">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>From</mat-label>
+                    <input matInput [matDatepicker]="fromDatePicker" formControlName="fromDate" required />
+                    <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #fromDatePicker></mat-datepicker>
+                    <mat-error *ngIf="expensesForm.get('fromDate').hasError('required')">
+                      Date is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-0">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>To</mat-label>
+                    <input matInput [matDatepicker]="toDatePicker" formControlName="toDate" required />
+                    <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+                    <mat-datepicker #toDatePicker></mat-datepicker>
+                    <mat-error *ngIf="expensesForm.get('toDate').hasError('required')">
+                      Date is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+            
+        </form>
+    
+        <div class="row">
+            <!-- <mat-card> -->
+            <!-- <mat-card-content> -->
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-0">
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary" [disabled]="!expensesForm.valid" (click)="onSubmit()">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        <b>Generate</b>
+                    </button>
+                    <!-- <button mat-button (click)="closeDialog()">Close</button> -->
+                </div>
+            </div>
+            <!-- </mat-card-content> -->
+            <!-- </mat-card> -->
+        </div>
+    </div>
+    <!-- </mat-card-content>
+        </mat-card> -->
