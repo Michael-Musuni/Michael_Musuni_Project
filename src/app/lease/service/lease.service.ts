@@ -14,7 +14,7 @@ export class LeaseService {
 
   private apiUrl = environment.apiUrl
 
-  private baseUrl = '/api/v1';
+  
 
   private updateDataSubject = new Subject<void>();
 
@@ -51,6 +51,14 @@ export class LeaseService {
     const addTenantUrl = `${this.apiUrl}/api/routes/add_route`;
 
     return this.http.post<any>(addTenantUrl, tenantData);
+  }
+  sendSms(to: string, message: string): Observable<Blob> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+   
+    const url = `${this.apiUrl}/api/sms/send?to=${to}&message=${message}`;
+    
+   
+    return this.http.post(url, null, { headers, responseType: 'blob' });
   }
   
 }

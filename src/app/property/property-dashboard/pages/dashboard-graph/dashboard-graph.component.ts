@@ -116,7 +116,7 @@ export class DashboardGraphComponent implements OnInit {
         // Updating area chart options with received data
         this.areaChartOptions = {
           series: [{
-            name: "Total Income",
+            name: "Total Income Kes",
             data: this.data.values
           }],
           chart: {
@@ -148,7 +148,7 @@ export class DashboardGraphComponent implements OnInit {
         // Updating area chart options with received data
         this.area2ChartOptions = {
           series: [{
-            name: "Water Usage",
+            name: "Water Usage Litres",
             data: this.data.values
           }],
           chart: {
@@ -175,8 +175,6 @@ export class DashboardGraphComponent implements OnInit {
     this.subscription = this.service.getRevenuePieChartData().subscribe(
       res => {
         this.data = res
-
-        console.log("myrevenuedata", this.data)
         this.loading = false;
         this.piechartOptions = {
           series: this.data.values,

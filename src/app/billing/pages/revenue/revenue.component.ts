@@ -11,6 +11,7 @@ import { MpesaDialogComponent } from '../mpesa-dialog/mpesa-dialog.component';
 import { InvoiceDownloadComponent } from '../invoice-download/invoice-download.component';
 import { MemberStatementComponent } from '../member-statement/member-statement.component';
 import { PaymentStatementsComponent } from '../payment-statements/payment-statements.component';
+import { MpesaStatementComponent } from '../mpesa-statement/mpesa-statement.component';
 
 @Component({
   selector: 'app-revenue',
@@ -126,6 +127,21 @@ ngOnDestroy() {
    
 
     const dialogRef = this.dialog.open(PaymentStatementsComponent, dialogConfig);
+
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('closed');
+    });
+  }
+  viewMpesaOptions(){
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '600px';
+    dialogConfig.data = { test: "data" }
+   
+
+    const dialogRef = this.dialog.open(MpesaStatementComponent, dialogConfig);
 
 
     dialogRef.afterClosed().subscribe((result) => {

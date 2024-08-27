@@ -51,16 +51,7 @@ constructor(
     });
   }
 
-  // openMemberDialog(){
-  //   const dialogConfig = new MatDialogConfig();
-  //   dialogConfig.disableClose = false
-  //   dialogConfig.autoFocus = true
-  //   dialogConfig.width = "500px"
-  //   dialogConfig.data = {
-  //     row: ""
-  //   }
-  //   this.dialog.open(MetreLookupComponent, dialogConfig)
-  // }
+  
  
  addAmenity(){
   this.lease.addRoute(this.amenityForm.value).subscribe(

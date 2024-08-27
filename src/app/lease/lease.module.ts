@@ -40,6 +40,7 @@ import { EditMemberComponent } from './pages/edit-member/edit-member.component';
 import { RouteLookupComponent } from './pages/route-lookup/route-lookup.component';
 import { MeterReadingsReportComponent } from './pages/meter-readings-report/meter-readings-report.component';
 import { MemberLookupComponent } from './pages/member-lookup/member-lookup.component';
+import { SendSmsComponent } from './pages/send-sms/send-sms.component';
 
 
  @NgModule ({
@@ -55,7 +56,8 @@ import { MemberLookupComponent } from './pages/member-lookup/member-lookup.compo
             EditMemberComponent,
             RouteLookupComponent,
             MeterReadingsReportComponent,
-            MemberLookupComponent
+            MemberLookupComponent,
+            SendSmsComponent
   ],
 
   imports: [

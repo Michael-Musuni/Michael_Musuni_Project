@@ -112,9 +112,9 @@ export class BillingService {
 
     return this.http.post<any>(addTenantUrl, tenantData);
   }
-  downloadInvoice(memberNo: string): Observable<any> {
+  downloadInvoice(memberNo: string): Observable<Blob> {
     const generateInvoiceUrl = `${this.apiUrl}/api/water/generateInvoice?memberNo=${memberNo}`;
-    return this.http.get<any>(generateInvoiceUrl);
+    return this.http.post(generateInvoiceUrl, null, { responseType: 'blob' }); // No body, expecting Blob response
   }
   memberStatement(fromDate: string, memberNo: string, toDate: string): Observable<Blob> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -128,6 +128,14 @@ export class BillingService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
    
     const url = `${this.baseUrl}/api/expenses/generatePaymentReport?fromDate=${fromDate}&toDate=${toDate}`;
+    
+   
+    return this.http.post(url, null, { headers, responseType: 'blob' });
+  }
+  mpesaStatement(fromDate: string, toDate: string): Observable<Blob> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+   
+    const url = `${this.baseUrl}/api/expenses/generateMpesaPaymentReport?fromDate=${fromDate}&toDate=${toDate}`;
     
    
     return this.http.post(url, null, { headers, responseType: 'blob' });

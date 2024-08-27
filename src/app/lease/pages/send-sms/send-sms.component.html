@@ -1,0 +1,55 @@
+<div class="row">
+
+    <div class="card">
+        <div class="body">
+            <form class="validate-form" [formGroup]="amenityForm">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="d-flex align-items-center">
+                          <!-- Send To Field -->
+                          <div class="flex-grow-1 me-2">
+                            <mat-form-field class="example-full-width" appearance="outline">
+                              <mat-label>Send To</mat-label>
+                              <input matInput formControlName="to" placeholder="Enter recipient's number 254..." />
+                              <mat-error *ngIf="amenityForm.get('to').hasError('required')">
+                                Send To is required
+                              </mat-error>
+                              <button mat-icon-button matSuffix color="primary" (click)="openDialog()">
+                                <mat-icon >add</mat-icon>
+                              </button>
+                            </mat-form-field>
+                          </div>
+                        </div>
+                    </div>
+                   
+                  <div class="col-12 mb-3">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>Message</mat-label>
+                      <textarea matInput formControlName="message" rows="6" placeholder="Enter your message"></textarea>
+              
+                      <mat-error *ngIf="amenityForm.get('message').hasError('required')">
+                        Message is required
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              
+             <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                        <div class="example-button-row" align="end">
+                            <button mat-raised-button color="primary" (click)="clearForm()">
+                                Clear
+                            </button>
+                            <button mat-raised-button color="primary" [disabled]="!amenityForm.valid"
+                                (click)="addAmenity()">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

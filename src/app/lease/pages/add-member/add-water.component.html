@@ -63,14 +63,22 @@
                         </div>
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
                             <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label>Phone Number</mat-label>
-                                <input matInput formControlName="phoneNumber" />
-
-                                <mat-error *ngIf="amenityForm.get('phoneNumber').hasError('required')">
-                                    phone no is required
-                                </mat-error>
+                              <mat-label>Phone Number</mat-label>
+                              <input 
+                                matInput 
+                                formControlName="phoneNumber" 
+                                placeholder="Enter phone number starting with 254"
+                                type="tel" 
+                                pattern="254\d*" />
+                              <mat-error *ngIf="amenityForm.get('phoneNumber').hasError('required')">
+                                Phone number is required
+                              </mat-error>
+                              <mat-error *ngIf="amenityForm.get('phoneNumber').hasError('invalidPhoneNumber')">
+                                Phone number must start with 254 and contain only numbers
+                              </mat-error>
                             </mat-form-field>
-                        </div>
+                          </div>
+                          
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
                             <mat-form-field class="example-full-width" appearance="outline">
                                 <mat-label>Email Address</mat-label>
@@ -80,15 +88,7 @@
                                 </mat-error>
                             </mat-form-field>
                         </div>
-                        <!-- <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
-                            <mat-form-field class="example-full-width" appearance="outline">
-                                <mat-label>Meter NO</mat-label>
-                                <input matInput formControlName="meterNumber" />
-                                <mat-error *ngIf="amenityForm.get('meterNumber').hasError('required')">
-                                    meter no reading is required
-                                </mat-error>
-                            </mat-form-field>
-                        </div> -->
+                      
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-3">
                             <mat-form-field class="example-full-width" appearance="outline">
                                 <mat-label>Current Meter Reading</mat-label>

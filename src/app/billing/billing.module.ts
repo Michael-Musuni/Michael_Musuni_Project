@@ -52,6 +52,7 @@ import { MemberStatementComponent } from './pages/member-statement/member-statem
 import { PaymentStatementsComponent } from './pages/payment-statements/payment-statements.component';
 import { RevenuesStatementComponent } from './pages/revenues-statement/revenues-statement.component';
 import { UnpaidInvoiceComponent } from './pages/unpaid-invoice/unpaid-invoice.component';
+import { MpesaStatementComponent } from './pages/mpesa-statement/mpesa-statement.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { UnpaidInvoiceComponent } from './pages/unpaid-invoice/unpaid-invoice.co
               MemberStatementComponent,
               PaymentStatementsComponent,
               RevenuesStatementComponent,
-              UnpaidInvoiceComponent
+              UnpaidInvoiceComponent,
+              MpesaStatementComponent
   ],
   imports: [
     CommonModule,

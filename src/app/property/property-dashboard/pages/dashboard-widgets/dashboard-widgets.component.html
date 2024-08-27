@@ -1,6 +1,6 @@
 <div class="row"*ngIf="loaded" >
     <div class="col-lg-3 col-sm-4">
-      <div class="info-box7 bg-blue order-info-box7" matTooltip="Properties" routerLink="/property/manage">
+      <div class="info-box7 bg-blue order-info-box7" matTooltip="Members" routerLink="/property/manage">
         <div class="info-box7-block">
           <h4 class="m-b-20">Members</h4>
           <h2 class="text-end"><span class="float-start">{{data.totalMembers}}</span><i class="fas fa-th"></i></h2>
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="col-lg-3 col-sm-4">
-      <div class="info-box7 bg-orange order-info-box7" matTooltip="Available Units" routerLink="/tenants/unit">
+      <div class="info-box7 bg-orange order-info-box7" matTooltip="All Meters" routerLink="/tenants/unit">
         <div class="info-box7-block">
           <h4 class="m-b-20">Meters</h4>
           <h2 class="text-end"><span class="float-start">{{data.totalMetres}}</span><i class="fas fa-th"></i></h2>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="col-lg-3 col-sm-4">
-      <div class="info-box7 bg-green order-info-box7" matTooltip="All tenants" routerLink="/tenants/manage">
+      <div class="info-box7 bg-green order-info-box7" matTooltip="All Routes" routerLink="/tenants/manage">
         <div class="info-box7-block">
           <h4 class="m-b-20">No of Routes</h4>
           <h2 class="text-end"><span class="float-start">{{data.waterUnits}}</span><i class="fas fa-th"></i></h2>

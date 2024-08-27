@@ -46,25 +46,32 @@ private billing:BillingService,
     });
   }
   onSubmit() {
-    if (this.expensesForm.valid) {
-      this.loading = true;  // Set loading to true when starting the request
-      const memberNo = this.expensesForm.value.memberNo;
-
-      this.billing.downloadInvoice(memberNo).subscribe(
-        (res) => {
-          this.loading = false;
-          this.data = res;
-          this.snackbar.showNotification("snackbar-success", this.data.message);
-          this.expensesForm.reset();
-          this.dialogRef.close();
-        },
-        (err) => {
-          this.loading = false;
-          this.snackbar.showNotification("snackbar-danger", err);
-        }
-      );
-    }
+    this.loading = true;  // Start loading
+  
+    const memberNo = this.expensesForm.value.memberNo;
+  
+    this.billing.downloadInvoice(memberNo).subscribe(
+      (response: Blob) => {
+        this.loading = false;  // Stop loading
+        const url = window.URL.createObjectURL(response);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'invoice.pdf';  // Name of the downloaded file
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        a.remove();
+        this.snackbar.showNotification("snackbar-success", "Invoice downloaded successfully.");
+        this.expensesForm.reset();
+        this.dialogRef.close();
+      },
+      (err) => {
+        this.loading = false;  // Stop loading on error
+        this.snackbar.showNotification("snackbar-danger", "Failed to download invoice.");
+      }
+    );
   }
+  
 
   closeDialog(): void {
     this.dialogRef.close();
