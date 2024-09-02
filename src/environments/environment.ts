@@ -5,7 +5,10 @@
 export const environment = {
   production: false,                                                                                
 
- apiUrl: "http://localhost:9702", 
+//  apiUrl: "http://localhost:9702", 
+
+
+  apiUrl: "https://kariango.emtechhouse.co.ke:9702",
 };
 
 // export const environment = {
